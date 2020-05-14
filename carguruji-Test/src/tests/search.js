@@ -3,8 +3,6 @@ import homepage from "../tests/module/pages/homePage"
 
 
 
-//const homepage = new homePage();
-
 const fixtureName = 'search functionality';
 
 fixture(fixtureName)
@@ -24,5 +22,5 @@ test( `${fixtureName} Search for product`, async t => {
 });
 
 test('hdhfhfh',async t =>{
-    
+
 })
