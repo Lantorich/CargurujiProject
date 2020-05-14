@@ -1,0 +1,22 @@
+{
+  "name": "carguruji",
+  "version": "1.0.0",
+  "description": "cargurujiTest",
+  "main": "index.js",
+  "author": "Ademola Joseph",
+  "license": "MIT",
+  "dependencies": {
+    "testcafe": "^1.8.4"
+  },
+  "scripts": {
+    "test:chrome": "testcafe -c 1 chrome src/tests/search.js -S -s src/reports --skip-js-errors ",
+    "test:chrome:headless": "testcafe -c 2 chrome:headless src/fixtures/**",
+    "test:chrome:mobile": "testcafe 'chrome:emulation:device=iphone X' src/fixtures/zingSignUp.js",
+    "test:safari": "testcafe -c 1 safari src/tests/search.js --skip-js-errors",
+    "test:debug": "testcafe --inspect-brk -c 2 chrome src/fixtures/**",
+    "test:firefox": "testcafe -c 2 firefox src/fixtures/**",
+    "test:all": "testcafe -c 2 chrome,chrome:headless,firefox src/fixtures/**"
+  }
+
+
+}
