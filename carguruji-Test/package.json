@@ -9,7 +9,7 @@
     "testcafe": "^1.8.4"
   },
   "scripts": {
-    "test:chrome": "testcafe -c 1 chrome src/tests/login.js -S -s src/reports --skip-js-errors ",
+    "test:chrome": "testcafe -c 1 chrome src/tests/**.js -S -s src/reports --skip-js-errors ",
     "test:chrome:headless": "testcafe -c 2 chrome:headless src/fixtures/**",
     "test:chrome:mobile": "testcafe 'chrome:emulation:device=iphone X' src/fixtures/zingSignUp.js",
     "test:safari": "testcafe -c 1 safari src/tests/search.js --skip-js-errors",

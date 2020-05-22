@@ -1,10 +1,10 @@
-import config from "../tests/module/config"
-import homepage from "../tests/module/pages/homePage"
-import signinpage from "../tests/module/pages/signInPage"
+import config from "./module/config"
+import account from "./module/pages/accountCreationPage"
+import signinpage from "./module/pages/signInPage"
+import testData from "./module/testData";
+import signInPage from "./module/pages/signInPage";
 
 
-
-let randomEmail = '';
 
 const fixtureName = 'signIn functionality';
 
@@ -14,13 +14,26 @@ fixture(fixtureName)
 
 .beforeEach(async t => {
   await t.maximizeWindow()
-  randomEmail = `golden${Math.floor(Math.random() * 1000)}@gmail.com`;
+
 })
 
 
 test( `${fixtureName} signIn to carguruji`, async t => {
-  
-  await signinpage.signInToCarguruji(randomEmail);
-  await t.takeScreenshot();
-  
+    await signinpage.signInToCarguruji();
 });
+
+test( `wrong Password and correct email.`, async t => {
+    await signinpage.useWrongPassword();
+    
+});
+
+test( `wrong email and correct password.`, async t => {
+    await signinpage.useWrongEmail();
+    
+});
+
+test( `blank email and password.`, async t => {
+    await signinpage.useBlankEmailAndPassword();
+
+});
+
